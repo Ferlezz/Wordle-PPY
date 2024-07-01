@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-size: cover;
+    margin: 0
   }
 
   h1 {
@@ -15,49 +16,72 @@ body {
     font-size: 18px;
     width: 250px;
     border: 1px solid #ccc;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: text
   }
-     
+
   #guess-button {
     display: block;
     margin: 0 auto;
-    padding: 10px 20px;
-    font-size: 18px;
+    font-size: 25px;
     background-color: #0CBABA;
     color: #ffffff;
     border: none;
-    border-radius: 3px;
-    transform: scale(120%);
+    border-radius: 16px;
+    width: 150px;
+    height: 60px;
   }
-     
+  #guess-button:hover{
+    border: 3px solid #0CBABA;
+    background-color: #ffffff;
+    color: #0CBABA;
+    cursor: pointer;
+  } 
+
   button:active {
       transform: scale(0.95);
   }
-     
+
   .letter {
-      border: 1px solid black;
+      border: 1px solid #ffffff ;
       padding: 12px;
       margin: 3px;
       min-width: 20px;
       text-align: center;
       display: inline-block;
+      
   }
-     
-  .row{
+
+.row{
       margin-bottom: 10px;
       text-align: center;
       margin-top: 20px;
+      font-weight: bold;
+
 
   }
-     
+
   .input-area{
       margin: 30px;
   }
   
   #guesses p{
     text-align: center;
-    margin-top: 0px;
-    font-size: 50px;
-    color: rgb(211, 198, 198);  
+    margin-bottom: 10px;
+    font-size: 50px; 
+    color: rgb(24, 2, 2);  
     border:1px solid black;
     border-width: 0px;
+  }
+  section {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
   }

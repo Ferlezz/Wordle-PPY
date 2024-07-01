@@ -1,11 +1,15 @@
 
 let intentos = 6;
-let lista = ["APPLE", "HURLS", "WINGS", "YOUTH",]
+let palabra; 
+
+let lista = ["APPLE", "HURLS", "WINGS", "YOUTH",];
 
 let posicion = Math.floor(Math.random() * lista.length)
 
-let palabra = lista[posicion];
-console.log(palabra);
+    palabra = lista[posicion]; 
+    console.log(palabra);
+
+
 
 const BUTTON = document.getElementById("guess-button");
 console.log(BUTTON);
@@ -13,6 +17,10 @@ BUTTON.addEventListener("click", intentar);
 
 function intentar() {
     const intento_user = leerIntento();
+    if (intento_user.length !== 5) {
+        alert("La palabra debe tener exactamente 5 letras");
+        return;
+    }
     const GRID = document.getElementById("grid");
     const ROW = document.createElement("div");
     ROW.className = "row";
@@ -39,6 +47,10 @@ function intentar() {
     GRID.appendChild(ROW);
     if (palabra === intento_user) {
         terminar("<p>GANASTE!😀</p>");
+        confetti({
+            particleCount: 150,
+            spread: 180
+        });
     }
     if (intentos === 0) {
         terminar("<p>PERDISTE!😖</p>");
